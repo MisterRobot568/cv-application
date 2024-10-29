@@ -13,19 +13,6 @@ function GeneralInfo({ generalInfo, setGeneralInfo }) {
   const [localInfo, setLocalInfo] = useState(generalInfo);
   const [isEditing, setIsEditing] = useState(true);
 
-  //   instead of several handle functions, we'll use this one that combines all changes
-  // Handle input change
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  //   if (name === "fullName") {
-  //     setFullName(value);
-  //   } else if (name === "email") {
-  //     setEmail(value);
-  //   } else if (name === "phone") {
-  //     setPhone(value);
-  //   }
-  //   // event.preventDefault();
-  // };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setLocalInfo({

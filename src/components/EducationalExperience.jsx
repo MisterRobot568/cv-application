@@ -68,7 +68,7 @@ function EducationalExperience({ educationalInfo, setEducationalInfo }) {
           <div>
             <label htmlFor="graduationDate">Graduation Date:</label>
             <input
-              type="text"
+              type="date"
               id="graduationDate"
               name="graduationDate"
               value={localInfo.graduationDate}

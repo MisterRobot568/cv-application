@@ -25,7 +25,8 @@ function App() {
     companyName: "",
     positionTitle: "",
     responsibilites: "",
-    datesWorked: "",
+    dateFrom: "",
+    dateTo: "",
   });
 
   // i don't think we need these anymore since we're updating state within the child components

@@ -1,28 +1,9 @@
 import { useState } from "react";
 
 function WorkExperience({ workInfo, setWorkInfo }) {
-  // use states for all of the variables that might change
-  //   const [companyName, setCompanyName] = useState("");
-  //   const [positionTitle, setPositionTitle] = useState("");
-  //   const [responsibilities, setResponsibilities] = useState("");
-  //   const [datesWorked, setDatesWorked] = useState("");
-
   const [localInfo, setLocalInfo] = useState(workInfo);
   const [isEditing, setIsEditing] = useState(true);
 
-  //event handler for changing each of these variables
-  //   const handleInputChange = (event) => {
-  //     const { name, value } = event.target;
-  //     if (name === "companyName") {
-  //       setCompanyName(value);
-  //     } else if (name === "positionTitle") {
-  //       setPositionTitle(value);
-  //     } else if (name === "responsibilites") {
-  //       setResponsibilities(value);
-  //     } else if (name === "datesWorked") {
-  //       setDatesWorked(value);
-  //     }
-  //   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setLocalInfo({
@@ -79,14 +60,25 @@ function WorkExperience({ workInfo, setWorkInfo }) {
             />
           </div>
           <div>
-            <label htmlFor="datesWorked">Dates worked:</label>
+            <label htmlFor="datesFrom">Date From:</label>
             <input
-              type="text"
-              id="datesWorked"
-              name="datesWorked"
-              value={localInfo.datesWorked}
+              type="date"
+              id="dateFrom"
+              name="dateFrom"
+              value={localInfo.dateFrom}
               onChange={handleInputChange}
-              placeholder="Name of the company you worked for"
+              placeholder="Date you started working at the company"
+            />
+          </div>
+          <div>
+            <label htmlFor="datesWorked">Date To:</label>
+            <input
+              type="date"
+              id="dateTo"
+              name="dateTo"
+              value={localInfo.dateTo}
+              onChange={handleInputChange}
+              placeholder="Date you stopped working for the company"
             />
           </div>
           <button type="submit"> Submit</button>
@@ -97,7 +89,8 @@ function WorkExperience({ workInfo, setWorkInfo }) {
           <p>Name of Company: {localInfo.companyName}</p>
           <p>Position within Company {localInfo.positionTitle}</p>
           <p>Responsibilites: {localInfo.responsibilities}</p>
-          <p>Dates Worked: {localInfo.datesWorked}</p>
+          <p>Start Date: {localInfo.dateFrom}</p>
+          <p>End Date: {localInfo.dateTo}</p>
           <button onClick={handleEdit}>Edit</button>
         </div>
       )}
